@@ -1,0 +1,33 @@
+{
+  "name": "my-avalon",
+  "version": "1.0.0",
+  "description": "study of avalon",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --devtool eval --progress --colors",
+    "deploy": "NODE_ENV=production webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chenjiefly/my-avalon.git"
+  },
+  "author": "chenjiefly",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chenjiefly/my-avalon/issues"
+  },
+  "homepage": "https://github.com/chenjiefly/my-avalon",
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "jquery": "^2.2.0",
+    "json-loader": "^0.5.4",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.11",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
