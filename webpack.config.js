@@ -3,13 +3,13 @@ var webpack = require('webpack');
 module.exports = {
     //页面入口文件配置
     entry: {
-        index : './src/js/page/index.js'
+        hello : './src/js/page/hello/index.js'
     },
     //入口文件输出配置
     output: {
         path: 'dist/js/page',
         filename: '[name].js',
-        publicPath: 'http://localhost:8080/dist/js/page'  // 指向静态资源
+        publicPath: 'http://localhost:8080/dist/js/page'  // 指向静态资源，webpack-dev-server重要设置
     },
     module: {
         //加载器配置

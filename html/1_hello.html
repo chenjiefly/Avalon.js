@@ -6,13 +6,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://localhost:8080/webpack-dev-server.js"></script>
-    <script src="http://localhost:8080/dist/js/page/index.js"></script>
-    <!-- // <script src="../dist/js/page/index.js"></script> -->
+    <script src="../dist/js/page/hello.js"></script>
 </head>
 
-<body ms-controller="test">
-    <input ms-duplex="name">
-    <p>Hello,{{name}}!</p>
+<body>
+    <div ms-controller="box">
+        <div style=" background: #a9ea00;" ms-css-width="w" ms-css-height="h" ms-click="click"></div>
+        <p>{{ w }} x {{ h }}</p>
+        <p>W: <input type="text" ms-duplex="w" data-duplex-event="change"/></p>
+        <p>H: <input type="text" ms-duplex="h" /></p>
+        <p>姓氏 <input type="text" ms-duplex="firstName" /></p>
+        <p>名字 <input type="text" ms-duplex="lastName" /></p>
+        <p>全名：{{fullName}}</p>
+        <div>{{time | date("yyyy - MM - dd mm:ss")}}</div>
+        <ul ms-each="simpleArray">
+            <li>{{el}}</li>
+        </ul>
+        <div>
+            <select ms-each="objectArray">
+                <option ms-value="el.value">{{el.name}}</option>
+            </select>
+        </div>
+        <ol ms-with="object">
+            <li>{{$key}}: {{$val}}</li>
+        </ol>
+    </div>
 </body>
  
 </html>
