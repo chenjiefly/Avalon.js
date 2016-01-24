@@ -39,15 +39,9 @@ var mod = {
                     vm.h = parseFloat(vm.h) - 10;
                 }
             });
-            
-            // 定时更新
-            setInterval(function() {
-                vm.time = new Date();
-            }, 1000);
 
-            vm.lastName += ' - 作者'; // 修改VM属性
             avalon.scan(); // avalon.scan是一个非常重要的方法，它有两个可选参数，第一个是扫描的起点元素，默认是HTML标签，第2个是VM对象
-        });
+        }); 
     }
 };
 

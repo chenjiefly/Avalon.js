@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://localhost:8080/webpack-dev-server.js"></script>
-    <script src="../dist/js/page/hello.js"></script>
+    <script src="../dist/js/page/instruction.js"></script>
 </head>
 
 <body>
@@ -20,13 +20,9 @@
         <p>姓氏 <input type="text" ms-duplex="firstName" /></p>
         <p>名字 <input type="text" ms-duplex="lastName" /></p>
         <p>全名：{{fullName}}</p>
-        <div>24小时制：{{time | date("yyyy - MM - dd HH:mm:ss")}}</div>
-        <div>12小时制：{{time | date("yyyy - MM - dd hh:mm:ss")}}</div>
+        <div>{{time | date("yyyy-MM-dd HH:mm:ss")}}</div>
         <ul ms-each="simpleArray">
             <li>{{el}}</li>
-        </ul>
-        <ul ms-each="simpleArray">
-            <li ms-text="el"></li>
         </ul>
         <div>
             <select ms-each="objectArray">

@@ -3,7 +3,9 @@ var webpack = require('webpack');
 module.exports = {
     //页面入口文件配置
     entry: {
-        hello : './src/js/page/hello/index.js'
+        hello : './src/js/page/hello/index.js',
+        property : './src/js/page/property/index.js',
+        instruction : './src/js/page/instruction/index.js'
     },
     //入口文件输出配置
     output: {

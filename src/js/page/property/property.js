@@ -29,25 +29,43 @@ var mod = {
                     get: function() {
                         return this.firstName + "·" + this.lastName;
                     }
-                },
-                click: function() { 
-                    vm.w = parseFloat(vm.w) + 10;
-                    vm.h = parseFloat(vm.h) + 10;
-                },
-                dblclick: function() {
-                    vm.w = parseFloat(vm.w) - 10;
-                    vm.h = parseFloat(vm.h) - 10;
                 }
             });
             
-            // 定时更新
+            var flag = true;
             setInterval(function() {
-                vm.time = new Date();
-            }, 1000);
+                vm.time = new Date(); 
 
-            vm.lastName += ' - 作者'; // 修改VM属性
+                if (flag) {
+                    //如果是数组，注意保证它们的元素的类型是一致的
+                   //只能全是字符串，或是全是布尔，不能有一些是这种类型，另一些是其他类型
+                   //这时我们可以使用set方法来更新（它有两个参数，第一个是index，第2个是新值）
+                    vm.simpleArray.set(0, 1000);
+                    vm.simpleArray.set(1, 2000);
+                    vm.simpleArray.set(2, 3000);
+                    vm.objectArray.set(0, {name: "xxx", value: "yyy"});
+                    vm.object = {
+                       o1: "aaaa",
+                       o2: "bbbb",
+                       o3: "cccc"
+                   };
+                } else {
+                    vm.simpleArray.set(0, 2000);
+                    vm.simpleArray.set(1, 3000);
+                    vm.simpleArray.set(2, 1000);
+                    vm.objectArray.set(0, {name: "aaa", value: "bbb"});
+                    vm.object = {
+                       o3: "cccc",
+                       o2: "bbbb", 
+                       o1: "aaaa"
+                   };
+                }
+                flag = !flag;
+               
+           }, 1000);
+
             avalon.scan(); // avalon.scan是一个非常重要的方法，它有两个可选参数，第一个是扫描的起点元素，默认是HTML标签，第2个是VM对象
-        });
+        }); 
     }
 };
 

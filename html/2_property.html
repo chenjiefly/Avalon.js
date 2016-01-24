@@ -6,27 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://localhost:8080/webpack-dev-server.js"></script>
-    <script src="../dist/js/page/hello.js"></script>
+    <script src="../dist/js/page/property.js"></script>
 </head>
 
 <body>
     <div ms-controller="box">
-        <button ms-click="click">单击放大</button>
-        <button ms-dblclick="dblclick">双击缩小</button>
-        <div style=" background: #a9ea00;" ms-css-width="w" ms-css-height="h"></div>
-        <p>{{ w }} x {{ h }}</p>
-        <p>W: <input type="text" ms-duplex="w" data-duplex-event="change"/></p>
-        <p>H: <input type="text" ms-duplex="h" /></p>
         <p>姓氏 <input type="text" ms-duplex="firstName" /></p>
         <p>名字 <input type="text" ms-duplex="lastName" /></p>
         <p>全名：{{fullName}}</p>
-        <div>24小时制：{{time | date("yyyy - MM - dd HH:mm:ss")}}</div>
-        <div>12小时制：{{time | date("yyyy - MM - dd hh:mm:ss")}}</div>
+        <div>{{time | date("yyyy-MM-dd HH:mm:ss")}}</div>
         <ul ms-each="simpleArray">
             <li>{{el}}</li>
-        </ul>
-        <ul ms-each="simpleArray">
-            <li ms-text="el"></li>
         </ul>
         <div>
             <select ms-each="objectArray">
