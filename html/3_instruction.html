@@ -5,33 +5,24 @@
     <title>first example</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/global.less">
     <script src="http://localhost:8080/webpack-dev-server.js"></script>
     <script src="../dist/js/page/instruction.js"></script>
 </head>
 
 <body>
-    <div ms-controller="box">
-        <button ms-click="click">单击放大</button>
-        <button ms-dblclick="dblclick">双击缩小</button>
-        <div style=" background: #a9ea00;" ms-css-width="w" ms-css-height="h"></div>
-        <p>{{ w }} x {{ h }}</p>
-        <p>W: <input type="text" ms-duplex="w" data-duplex-event="change"/></p>
-        <p>H: <input type="text" ms-duplex="h" /></p>
-        <p>姓氏 <input type="text" ms-duplex="firstName" /></p>
-        <p>名字 <input type="text" ms-duplex="lastName" /></p>
-        <p>全名：{{fullName}}</p>
-        <div>{{time | date("yyyy-MM-dd HH:mm:ss")}}</div>
-        <ul ms-each="simpleArray">
-            <li>{{el}}</li>
-        </ul>
-        <div>
-            <select ms-each="objectArray">
-                <option ms-value="el.value">{{el.name}}</option>
-            </select>
+    <h3>作用域</h3>
+    <div ms-controller="AAA">
+        <div>{{name}} :  {{color}}</div>
+        <div ms-controller="BBB">
+            <div>{{name}} :  {{color}}</div>
+            <div ms-controller="CCC">
+                <div>{{name}} :  {{color}}</div>
+            </div>
+            <div ms-important="DDD">
+                <div>{{name}} :  {{color}}</div>
+            </div>
         </div>
-        <ol ms-with="object">
-            <li>{{$key}}: {{$val}}</li>
-        </ol>
     </div>
 </body>
  

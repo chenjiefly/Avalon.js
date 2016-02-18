@@ -26,15 +26,14 @@ module.exports = {
             {test: /\.eot$/, loader: "file"},
             {test: /\.svg$/, loader: "file"}
         ]
+    },
+    // 其它解决方案配置
+    resolve: {
+        // root: process.cwd() + '/src', //process.cwd() + '/node_modules'],
+        extensions: ['', '.js', '.json', '.less'],
+        alias: {
+            // globalCss : '../../../css/global.less'
+            // globalCss : 'src/css/global.less'
+        }
     }
-    // //其它解决方案配置
-    // , resolve: {
-    //     root: 'process.cwd() + '/src', process.cwd() + '/node_modules'',
-    //     extensions: ['', '.js', '.json', '.scss'],
-    //     alias: {
-    //         AppStore : 'js/stores/AppStores.js',
-    //         ActionType : 'js/actions/ActionType.js',
-    //         AppAction : 'js/actions/AppAction.js'
-    //     }
-    // }
 };
